@@ -5,12 +5,28 @@ config_h = configure_file(
 )
 
 deps_zippo = [
-  udev_dep,
+  dep_dbus,
+  dep_libdrm,
+  dep_pixman,
+  dep_systemd,
+  dep_udev,
+  dep_wayland_client,
+  dep_wayland_scanner,
+  dep_wayland_server,
 ]
 
 srcs_zippo = [
+  'backend-drm.c',
+  'compositor.c',
+  'dbus.c',
+  'drm-crtc.c',
+  'drm-format.c',
+  'drm-plane.c',
+  'kms.c',
+  'launcher-logind.c',
   'main.c',
-  'native.c',
+  'output-drm.c',
+  'view.c',
   config_h,
 ]
 

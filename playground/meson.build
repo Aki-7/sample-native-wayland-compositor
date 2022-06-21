@@ -4,7 +4,7 @@ playground_single_src_executables = [
 ]
 
 playground_deps = [
-  udev_dep,
+  dep_udev,
 ]
 
 foreach name : playground_single_src_executables
