@@ -10,14 +10,25 @@ cc = meson.get_compiler('c')
 
 # generic version requirements
 
-udev_req = '>= 136'
-systemd_req = '>= 209'
+req_dbus = '>= 1.6'
+req_libdrm = '>= 2.4.95'
+req_pixman = '>= 0.25.2'
+req_systemd = '>= 209'
+req_wayland_server = '>= 1.18.0'
+req_wayland_client = '>= 1.18.0'
+req_wayland_scanner = '>= 1.14.91'
 
 # dependencies
 
-udev_dep = dependency('libudev', version: udev_req)
-systemd_dep = dependency('libsystemd', version: systemd_req)
-pam_dep = cc.find_library('pam')
+dep_dbus = dependency('dbus-1', version: req_dbus)
+dep_libdrm = dependency('libdrm', version: req_libdrm)
+dep_pam = cc.find_library('pam')
+dep_pixman = dependency('pixman-1', version: req_pixman)
+dep_systemd = dependency('libsystemd', version: req_systemd)
+dep_udev = dependency('libudev')
+dep_wayland_server = dependency('wayland-server', version: req_wayland_server)
+dep_wayland_client = dependency('wayland-client', version: req_wayland_client)
+dep_wayland_scanner = dependency('wayland-scanner', version: req_wayland_scanner)
 
 # config.h
 

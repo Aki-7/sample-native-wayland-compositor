@@ -88,6 +88,7 @@ vt_stat_test()
       return;
     }
     fprintf(stderr, "open %s\n", path);
+    close(another_tty);
   }
 
   if (ioctl(tty, VT_GETSTATE, &vts) < 0) {
@@ -97,8 +98,6 @@ vt_stat_test()
     printb(vts.v_state);
     fprintf(stderr, "\n");
   }
-
-  close(another_tty);
 }
 
 int

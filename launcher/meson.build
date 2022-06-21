@@ -4,8 +4,8 @@ srcs_zippo_launch = [
 ]
 
 deps_zippo_launch = [
-  pam_dep,
-  systemd_dep,
+  dep_pam,
+  dep_systemd,
 ]
 
 executable(
